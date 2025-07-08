@@ -1,0 +1,204 @@
+[
+  {
+    "name": "ZUS All Day Cup 500ml (17oz) - Aqua",
+    "category": "Drinkware",
+    "subcategory": "Tumbler",
+    "price": "RM 45.00",
+    "description": "ZUS All Day Cup in refreshing aqua color. Double-wall vacuum insulated stainless steel tumbler perfect for keeping your beverages at the ideal temperature throughout the day. Features sleek design with ZUS branding.",
+    "features": [
+      "Double-wall vacuum insulation",
+      "500ml (17oz) capacity", 
+      "Stainless steel construction",
+      "BPA-free materials",
+      "Leak-proof lid",
+      "Temperature retention up to 6 hours",
+      "Dishwasher safe",
+      "Aqua color finish"
+    ],
+    "specifications": {
+      "capacity": "500ml (17oz)",
+      "material": "Stainless steel",
+      "insulation": "Double-wall vacuum",
+      "color": "Aqua",
+      "dimensions": "Height: 18cm, Diameter: 8cm",
+      "weight": "320g"
+    },
+    "availability": true,
+    "tags": ["tumbler", "insulated", "steel", "aqua", "500ml", "daily use", "office", "travel"]
+  },
+  {
+    "name": "ZUS All Day Cup 500ml (17oz) - Mountain",
+    "category": "Drinkware", 
+    "subcategory": "Tumbler",
+    "price": "RM 45.00",
+    "description": "ZUS All Day Cup in mountain green color. Premium double-wall vacuum insulated tumbler designed for coffee enthusiasts who need their drinks to stay at perfect temperature. Durable and stylish for everyday use.",
+    "features": [
+      "Double-wall vacuum insulation",
+      "500ml (17oz) capacity",
+      "Stainless steel construction", 
+      "BPA-free materials",
+      "Leak-proof lid",
+      "Temperature retention up to 6 hours",
+      "Dishwasher safe",
+      "Mountain green color finish"
+    ],
+    "specifications": {
+      "capacity": "500ml (17oz)",
+      "material": "Stainless steel",
+      "insulation": "Double-wall vacuum", 
+      "color": "Mountain Green",
+      "dimensions": "Height: 18cm, Diameter: 8cm",
+      "weight": "320g"
+    },
+    "availability": true,
+    "tags": ["tumbler", "insulated", "steel", "green", "500ml", "daily use", "office", "travel"]
+  },
+  {
+    "name": "[Corak Malaysia] Tiga Sekawan Bundle",
+    "category": "Drinkware",
+    "subcategory": "Bundle Set",
+    "price": "RM 89.00", 
+    "description": "Special Corak Malaysia collection featuring the Tiga Sekawan (Three Friends) design. This bundle includes tumbler with traditional Malaysian patterns celebrating local culture and heritage. Perfect gift set for Malaysian coffee lovers.",
+    "features": [
+      "Malaysian heritage design",
+      "Traditional Tiga Sekawan pattern",
+      "Bundle set with accessories",
+      "Limited edition collection",
+      "Cultural significance",
+      "Premium packaging",
+      "Gift-ready presentation"
+    ],
+    "specifications": {
+      "collection": "Corak Malaysia",
+      "design": "Tiga Sekawan",
+      "bundle_contents": "Tumbler + Accessories",
+      "packaging": "Premium gift box"
+    },
+    "availability": true,
+    "tags": ["malaysian", "heritage", "bundle", "gift", "traditional", "culture", "limited edition"]
+  },
+  {
+    "name": "[Kopi Patah Hati] ZUS Frozee Cold Cup",
+    "category": "Drinkware",
+    "subcategory": "Cold Cup",
+    "price": "RM 35.00",
+    "description": "Special edition Kopi Patah Hati (Broken Heart Coffee) Frozee Cold Cup with unique pink design. Perfect for iced beverages and cold drinks. Features playful design elements that capture the bittersweet essence of coffee culture.",
+    "features": [
+      "Special Kopi Patah Hati edition",
+      "Pink color scheme",
+      "Designed for cold beverages", 
+      "Unique artistic design",
+      "Limited edition collection",
+      "Perfect for iced drinks",
+      "Trendy aesthetic"
+    ],
+    "specifications": {
+      "collection": "Kopi Patah Hati",
+      "color": "Pink",
+      "type": "Cold cup",
+      "special_edition": true
+    },
+    "availability": true,
+    "tags": ["cold cup", "pink", "kopi patah hati", "iced drinks", "special edition", "trendy"]
+  },
+  {
+    "name": "ZUS Classic Ceramic Mug",
+    "category": "Drinkware",
+    "subcategory": "Mug", 
+    "price": "RM 25.00",
+    "description": "Classic ceramic mug with ZUS branding. Perfect for enjoying your morning coffee or afternoon tea. Features comfortable handle and generous capacity for the perfect coffee experience at home or office.",
+    "features": [
+      "Premium ceramic construction",
+      "Comfortable grip handle",
+      "ZUS logo branding",
+      "Microwave safe",
+      "Dishwasher safe",
+      "Classic white finish",
+      "Generous capacity"
+    ],
+    "specifications": {
+      "capacity": "350ml",
+      "material": "Ceramic", 
+      "color": "White with ZUS logo",
+      "microwave_safe": true,
+      "dishwasher_safe": true
+    },
+    "availability": true,
+    "tags": ["ceramic", "mug", "classic", "white", "home", "office", "traditional"]
+  },
+  {
+    "name": "ZUS Travel Tumbler Premium",
+    "category": "Drinkware",
+    "subcategory": "Travel Tumbler",
+    "price": "RM 55.00", 
+    "description": "Premium travel tumbler designed for the modern coffee lover on the go. Features advanced insulation technology and spill-proof design. Perfect companion for commuters and travelers who refuse to compromise on their coffee quality.",
+    "features": [
+      "Advanced insulation technology",
+      "Spill-proof design",
+      "Travel-friendly size",
+      "Premium finish",
+      "Ergonomic grip",
+      "Long-lasting temperature retention",
+      "Durable construction"
+    ],
+    "specifications": {
+      "capacity": "400ml",
+      "material": "Premium stainless steel",
+      "insulation": "Triple-wall vacuum",
+      "lid_type": "Spill-proof",
+      "retention": "8+ hours"
+    },
+    "availability": true,
+    "tags": ["travel", "premium", "commuter", "spill-proof", "insulated", "portable"]
+  },
+  {
+    "name": "ZUS Glass Coffee Cup Set",
+    "category": "Drinkware",
+    "subcategory": "Glass Set",
+    "price": "RM 65.00",
+    "description": "Elegant set of 2 glass coffee cups perfect for the coffee connoisseur. Made from heat-resistant borosilicate glass that showcases the beautiful colors and layers of your coffee. Ideal for specialty coffee brewing at home.",
+    "features": [
+      "Set of 2 glass cups",
+      "Heat-resistant borosilicate glass",
+      "Showcases coffee colors",
+      "Perfect for specialty coffee",
+      "Elegant design",
+      "Thermal shock resistant",
+      "Easy to clean"
+    ],
+    "specifications": {
+      "quantity": "2 pieces",
+      "capacity": "300ml each",
+      "material": "Borosilicate glass",
+      "heat_resistant": true,
+      "thermal_shock_resistant": true
+    },
+    "availability": false,
+    "tags": ["glass", "set", "specialty coffee", "elegant", "heat resistant", "brewing"]
+  },
+  {
+    "name": "ZUS Eco Bamboo Cup",
+    "category": "Drinkware",
+    "subcategory": "Eco Cup",
+    "price": "RM 30.00",
+    "description": "Sustainable bamboo fiber cup for environmentally conscious coffee lovers. Made from natural bamboo fibers with food-grade silicone lid. Lightweight, biodegradable, and perfect for reducing plastic waste while enjoying your daily coffee.",
+    "features": [
+      "Made from bamboo fiber",
+      "Environmentally friendly",
+      "Biodegradable material",
+      "Food-grade silicone lid",
+      "Lightweight design",
+      "Natural texture",
+      "Sustainable choice"
+    ],
+    "specifications": {
+      "capacity": "350ml",
+      "material": "Bamboo fiber with silicone lid",
+      "weight": "150g",
+      "biodegradable": true,
+      "eco_friendly": true
+    },
+    "availability": true,
+    "tags": ["bamboo", "eco-friendly", "sustainable", "biodegradable", "natural", "green"]
+  }
+]

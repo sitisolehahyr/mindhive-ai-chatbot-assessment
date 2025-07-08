@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "ZUS Coffee SS2",
+    "address": "No. 47, Jalan SS2/61, SS2, 47300 Petaling Jaya, Selangor",
+    "city": "Petaling Jaya", 
+    "state": "Selangor",
+    "postcode": "47300",
+    "phone": "+603-7876-2847",
+    "email": "ss2@zuscoffee.com",
+    "operating_hours": {
+      "monday": "7:00 AM - 10:00 PM",
+      "tuesday": "7:00 AM - 10:00 PM", 
+      "wednesday": "7:00 AM - 10:00 PM",
+      "thursday": "7:00 AM - 10:00 PM",
+      "friday": "7:00 AM - 11:00 PM",
+      "saturday": "8:00 AM - 11:00 PM",
+      "sunday": "8:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "WiFi", "Parking", "Outdoor Seating"],
+    "coordinates": {"lat": 3.1193, "lng": 101.6242},
+    "outlet_type": "Standalone",
+    "features": ["Drive-thru", "24-hour parking", "Pet-friendly", "Study area"],
+    "capacity": 45,
+    "established": "2019-03-15"
+  },
+  {
+    "id": 2,
+    "name": "ZUS Coffee Mid Valley",
+    "address": "LG-227A, Lower Ground Floor, Mid Valley Megamall, Lingkaran Syed Putra, 59200 Kuala Lumpur", 
+    "city": "Kuala Lumpur",
+    "state": "Federal Territory of Kuala Lumpur",
+    "postcode": "59200",
+    "phone": "+603-2938-3847",
+    "email": "midvalley@zuscoffee.com",
+    "operating_hours": {
+      "daily": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Mall Location", "WiFi"],
+    "coordinates": {"lat": 3.1184, "lng": 101.6772},
+    "outlet_type": "Shopping Mall",
+    "features": ["Air conditioning", "Mall access", "Shopping convenience"],
+    "capacity": 30,
+    "established": "2020-01-20"
+  },
+  {
+    "id": 3,
+    "name": "ZUS Coffee KLCC",
+    "address": "G-240, Ground Floor, Suria KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur",
+    "city": "Kuala Lumpur", 
+    "state": "Federal Territory of Kuala Lumpur",
+    "postcode": "50088",
+    "phone": "+603-2382-2847",
+    "email": "klcc@zuscoffee.com",
+    "operating_hours": {
+      "daily": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Tourist Area", "WiFi", "Premium Location"],
+    "coordinates": {"lat": 3.1579, "lng": 101.7077},
+    "outlet_type": "Shopping Mall",
+    "features": ["Tourist area", "City center", "Premium mall", "KLCC vicinity"],
+    "capacity": 35,
+    "established": "2020-06-10"
+  },
+  {
+    "id": 4,
+    "name": "ZUS Coffee 1 Utama",
+    "address": "LG-K301, Lower Ground Floor, 1 Utama Shopping Centre, Lebuh Bandar Utama, 47800 Petaling Jaya, Selangor",
+    "city": "Petaling Jaya",
+    "state": "Selangor", 
+    "postcode": "47800",
+    "phone": "+603-7726-2847",
+    "email": "1utama@zuscoffee.com",
+    "operating_hours": {
+      "monday": "10:00 AM - 10:00 PM",
+      "tuesday": "10:00 AM - 10:00 PM",
+      "wednesday": "10:00 AM - 10:00 PM", 
+      "thursday": "10:00 AM - 10:00 PM",
+      "friday": "10:00 AM - 11:00 PM",
+      "saturday": "10:00 AM - 11:00 PM",
+      "sunday": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Mall Location", "WiFi", "Family Area"],
+    "coordinates": {"lat": 3.1519, "lng": 101.6147},
+    "outlet_type": "Shopping Mall",
+    "features": ["Large seating area", "Family-friendly", "Shopping access"],
+    "capacity": 50,
+    "established": "2019-11-05"
+  },
+  {
+    "id": 5,
+    "name": "ZUS Coffee Bangsar Village",
+    "address": "G-17, Ground Floor, Bangsar Village II, 2, Jalan Telawi 1, Bangsar Baru, 59100 Kuala Lumpur",
+    "city": "Kuala Lumpur",
+    "state": "Federal Territory of Kuala Lumpur", 
+    "postcode": "59100",
+    "phone": "+603-2287-2847",
+    "email": "bangsar@zuscoffee.com",
+    "operating_hours": {
+      "monday": "8:00 AM - 11:00 PM",
+      "tuesday": "8:00 AM - 11:00 PM",
+      "wednesday": "8:00 AM - 11:00 PM",
+      "thursday": "8:00 AM - 11:00 PM", 
+      "friday": "8:00 AM - 12:00 AM",
+      "saturday": "8:00 AM - 12:00 AM",
+      "sunday": "8:00 AM - 11:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "WiFi", "Late Night", "Trendy Area"],
+    "coordinates": {"lat": 3.1285, "lng": 101.6711},
+    "outlet_type": "Shopping Mall",
+    "features": ["Late hours", "Trendy location", "Bangsar area", "Nightlife"],
+    "capacity": 40,
+    "established": "2021-02-14"
+  },
+  {
+    "id": 6,
+    "name": "ZUS Coffee Sunway Pyramid",
+    "address": "LG2-140, Lower Ground 2, Sunway Pyramid, 3, Jalan PJS 11/15, Bandar Sunway, 47500 Petaling Jaya, Selangor",
+    "city": "Petaling Jaya",
+    "state": "Selangor",
+    "postcode": "47500", 
+    "phone": "+603-5621-2847",
+    "email": "sunway@zuscoffee.com",
+    "operating_hours": {
+      "daily": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Mall Location", "WiFi", "Student Area"],
+    "coordinates": {"lat": 3.0738, "lng": 101.6065},
+    "outlet_type": "Shopping Mall",
+    "features": ["Near university", "Student discounts", "Study-friendly"],
+    "capacity": 55,
+    "established": "2020-09-12"
+  },
+  {
+    "id": 7,
+    "name": "ZUS Coffee The Gardens Mall",
+    "address": "T2-13A, 2nd Floor, The Gardens Mall, Lingkaran Syed Putra, 59200 Kuala Lumpur",
+    "city": "Kuala Lumpur",
+    "state": "Federal Territory of Kuala Lumpur",
+    "postcode": "59200",
+    "phone": "+603-2282-2847", 
+    "email": "gardens@zuscoffee.com",
+    "operating_hours": {
+      "daily": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Premium Mall", "WiFi", "Business Area"],
+    "coordinates": {"lat": 3.1170, "lng": 101.6800},
+    "outlet_type": "Shopping Mall",
+    "features": ["Premium location", "Business district", "Upscale mall"],
+    "capacity": 42,
+    "established": "2021-05-20"
+  },
+  {
+    "id": 8,
+    "name": "ZUS Coffee IOI City Mall",
+    "address": "LG-36, Lower Ground Floor, IOI City Mall, Lebuh IRC, IOI Resort City, 62502 Putrajaya, Selangor",
+    "city": "Putrajaya", 
+    "state": "Federal Territory of Putrajaya",
+    "postcode": "62502",
+    "phone": "+603-8328-2847",
+    "email": "ioi@zuscoffee.com",
+    "operating_hours": {
+      "monday": "10:00 AM - 10:00 PM",
+      "tuesday": "10:00 AM - 10:00 PM",
+      "wednesday": "10:00 AM - 10:00 PM",
+      "thursday": "10:00 AM - 10:00 PM",
+      "friday": "10:00 AM - 11:00 PM", 
+      "saturday": "10:00 AM - 11:00 PM",
+      "sunday": "10:00 AM - 10:00 PM"
+    },
+    "services": ["Dine-in", "Takeaway", "Mall Location", "WiFi", "Family Entertainment"],
+    "coordinates": {"lat": 2.9189, "lng": 101.6500},
+    "outlet_type": "Shopping Mall",
+    "features": ["Entertainment area", "Large mall", "Family activities"],
+    "capacity": 48,
+    "established": "2020-12-03"
+  }
+]
