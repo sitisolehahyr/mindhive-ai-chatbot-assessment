@@ -25,6 +25,9 @@ Technical assessment for Mindhive AI Chatbot Engineer role - A comprehensive AI 
    
    # Install dependencies
    pip install -r requirements.txt
+   
+   # For production deployment, use minimal requirements:
+   pip install -r requirements-minimal.txt
    ```
 
 3. **Configure environment variables**

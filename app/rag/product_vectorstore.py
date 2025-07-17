@@ -7,6 +7,7 @@ import faiss
 import pickle
 import logging
 from dataclasses import dataclass
+from app.config import DEFAULT_SENTENCE_TRANSFORMER_MODEL, DEFAULT_VECTOR_STORE_PATH, ZUS_PRODUCTS_FILE
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -46,7 +47,7 @@ class ZUSProductVectorStore:
     - Hybrid search (semantic + keyword)
     """
     
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2", index_path: str = "data/vector_store"):
+    def __init__(self, model_name: str = DEFAULT_SENTENCE_TRANSFORMER_MODEL, index_path: str = DEFAULT_VECTOR_STORE_PATH):
         self.model_name = model_name
         self.index_path = index_path
         self.encoder = None
@@ -444,7 +445,7 @@ if __name__ == "__main__":
     vector_store = ZUSProductVectorStore()
     
     # Load products
-    products_file = "/Users/solehahyunita/mindhive-chatbot/app/data/zus_products.json"
+    products_file = str(ZUS_PRODUCTS_FILE)
     vector_store.load_products_from_json(products_file)
     
     # Build index

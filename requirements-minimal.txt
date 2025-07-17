@@ -1,0 +1,30 @@
+# Core API dependencies
+fastapi>=0.104.1
+uvicorn>=0.24.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+httpx>=0.25.2
+
+# AI/ML dependencies
+openai>=1.6.1,<2.0.0
+langchain>=0.1.0
+langchain-openai>=0.0.8
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+dspy-ai>=2.4.0
+
+# Database and storage
+chromadb>=0.4.18
+sqlalchemy>=2.0.23
+
+# Data processing
+pandas>=2.2.0
+numpy>=1.24.0
+
+# Development dependencies (optional)
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+black>=23.11.0
+flake8>=6.1.0
+mypy>=1.7.1

@@ -6,6 +6,7 @@ from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass
 import logging
 from datetime import datetime
+from app.config import ZUS_OUTLETS_FILE, DEFAULT_DB_PATH
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -44,7 +45,7 @@ class ZUSOutletText2SQL:
     - Error handling and fallbacks
     """
     
-    def __init__(self, db_path: str = "data/zus_outlets.db"):
+    def __init__(self, db_path: str = DEFAULT_DB_PATH):
         self.db_path = db_path
         self.connection = None
         
@@ -172,7 +173,7 @@ class ZUSOutletText2SQL:
     
     def _load_initial_data(self):
         """Load initial outlet data from JSON file"""
-        json_path = "/Users/solehahyunita/mindhive-chatbot/app/data/zus_outlets.json"
+        json_path = str(ZUS_OUTLETS_FILE)
         
         try:
             with open(json_path, 'r', encoding='utf-8') as f:

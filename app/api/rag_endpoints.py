@@ -3,10 +3,12 @@ from typing import List, Dict, Any, Optional
 from pydantic import BaseModel, Field
 import logging
 import time
+import os
 
 # Import our RAG systems
 from app.rag.product_vectorstore import ZUSProductVectorStore
 from app.rag.text2sql_system import ZUSOutletText2SQL
+from app.config import ZUS_PRODUCTS_FILE
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,7 +26,7 @@ def init_rag_systems():
     try:
         # Initialize product vector store
         product_store = ZUSProductVectorStore()
-        products_file = "/Users/solehahyunita/mindhive-chatbot/app/data/zus_products.json"
+        products_file = str(ZUS_PRODUCTS_FILE)
         product_store.load_products_from_json(products_file)
         
         # Try to load existing index, build if not available

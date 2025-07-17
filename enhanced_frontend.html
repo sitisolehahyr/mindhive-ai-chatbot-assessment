@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindhive Chatbot - Demo</title>
+    <title>Mindhive Chatbot - Enhanced Demo</title>
     <style>
         * {
             margin: 0;
@@ -229,6 +229,46 @@
             font-size: 14px;
         }
 
+        .product-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-card h4 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .product-card .description {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .product-card .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .feature-tag {
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #495057;
+        }
+
         @media (max-width: 768px) {
             .chat-container {
                 width: 95vw;
@@ -250,31 +290,32 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <h1>🤖 Mindhive Chatbot</h1>
-            <p>Technical Assessment Demo - Try all features!</p>
+            <h1>🤖 Mindhive Chatbot Enhanced</h1>
+            <p>Technical Assessment Demo - Full RAG & Agentic Features!</p>
         </div>
         
         <div class="features-bar">
-            <button class="feature-btn" onclick="sendExampleMessage('Calculate 25 + 37')">🧮 Calculator</button>
-            <button class="feature-btn" onclick="sendExampleMessage('Find outlets in Kuala Lumpur')">📍 Outlets</button>
-            <button class="feature-btn" onclick="sendProductSearch('coffee tumblers')">🔍 Products</button>
-            <button class="feature-btn" onclick="sendExampleMessage('Find Italian restaurants in KL')">🍝 Restaurants</button>
+            <button class="feature-btn" onclick="sendDirectMessage('Calculate 25 + 37')">🧮 Calculator</button>
+            <button class="feature-btn" onclick="sendDirectMessage('Find outlets in Kuala Lumpur')">📍 Outlets</button>
+            <button class="feature-btn" onclick="sendProductSearch('coffee tumbler')">🔍 Products</button>
+            <button class="feature-btn" onclick="sendRestaurantSearch('Italian restaurants in KL')">🍝 Restaurants</button>
             <button class="feature-btn" onclick="sendProductSearch('eco-friendly cups')">🌱 RAG Search</button>
-            <button class="feature-btn" onclick="testErrorHandling()">⚠️ Test Errors</button>
+            <button class="feature-btn" onclick="sendAgenticMessage('Plan my morning coffee routine')">🧠 Agentic</button>
         </div>
         
         <div class="chat-messages" id="chatMessages">
             <div class="message bot">
                 <div class="avatar bot">🤖</div>
                 <div class="message-content">
-                    <strong>Welcome to Mindhive Chatbot!</strong><br><br>
+                    <strong>Welcome to Mindhive Chatbot Enhanced!</strong><br><br>
                     I can help you with:<br>
                     • 🧮 Mathematical calculations<br>
                     • 📍 ZUS Coffee outlet information<br>
                     • 🔍 Product searches with RAG<br>
                     • 🍝 Restaurant recommendations<br>
+                    • 🧠 Agentic planning and reasoning<br>
                     • 🛡️ Robust error handling<br><br>
-                    Try the quick action buttons above or type your own message!
+                    Try the enhanced buttons above or type your own message!
                 </div>
             </div>
         </div>
@@ -330,6 +371,30 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
+        function addProductCards(products) {
+            const messagesContainer = document.getElementById('chatMessages');
+            
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-card';
+                
+                productDiv.innerHTML = `
+                    <h4>${product.name}</h4>
+                    <div class="price">${product.price}</div>
+                    <div class="description">${product.description.substring(0, 100)}...</div>
+                    <div class="features">
+                        ${product.features.slice(0, 3).map(feature => 
+                            `<span class="feature-tag">${feature}</span>`
+                        ).join('')}
+                    </div>
+                `;
+                
+                messagesContainer.appendChild(productDiv);
+            });
+            
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
         function formatBotMessage(content) {
             // Format markdown-like syntax
             content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -365,118 +430,9 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        async function sendMessage() {
-            const input = document.getElementById('messageInput');
-            const sendBtn = document.getElementById('sendBtn');
-            const message = input.value.trim();
-            
-            if (!message) return;
-            
-            // Add user message
-            addMessage(message, true);
-            input.value = '';
-            sendBtn.disabled = true;
-            
-            // Show typing indicator
-            showTyping();
-            
-            try {
-                // Send to chatbot API
-                const response = await fetch(`${API_BASE_URL}/api/chat/message`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        user_id: 'demo-user-' + Date.now(),
-                        conversation_id: sessionStorage.getItem('conversation_id') || null
-                    })
-                });
-                
-                hideTyping();
-                
-                if (!response.ok) {
-                    if (response.status === 404) {
-                        // Fallback to agentic chat if regular chat not available
-                        return await sendToAgenticChat(message);
-                    }
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                // Store conversation ID for subsequent messages
-                if (data.conversation_id) {
-                    sessionStorage.setItem('conversation_id', data.conversation_id);
-                }
-                
-                addMessage(data.response || 'No response received');
-                
-            } catch (error) {
-                hideTyping();
-                console.error('Error:', error);
-                
-                // Try agentic chat as fallback
-                try {
-                    await sendToAgenticChat(message);
-                } catch (fallbackError) {
-                    console.error('Fallback error:', fallbackError);
-                    addMessage(`I'm sorry, I'm having trouble connecting to the chatbot service. Please make sure the backend is running on ${API_BASE_URL}`);
-                    showError(`Connection failed: ${error.message}`);
-                }
-            } finally {
-                sendBtn.disabled = false;
-            }
-        }
-
-        async function sendToAgenticChat(message) {
-            try {
-                const response = await fetch(`${API_BASE_URL}/api/agentic-chat/message`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        user_id: 'demo-user-' + Date.now(),
-                        conversation_id: sessionStorage.getItem('agentic_conversation_id') || null
-                    })
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`Agentic Chat HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                // Store conversation ID for subsequent messages
-                if (data.conversation_id) {
-                    sessionStorage.setItem('agentic_conversation_id', data.conversation_id);
-                }
-                
-                addMessage(data.response || 'No response received from agentic chat');
-                
-                // Optionally show planning details
-                if (data.planning_details) {
-                    console.log('Planning details:', data.planning_details);
-                }
-                
-            } catch (error) {
-                throw error;
-            }
-        }
-
-        function sendExampleMessage(message) {
-            document.getElementById('messageInput').value = message;
-            sendMessage();
-        }
-
         // Direct product search using RAG
         async function sendProductSearch(query) {
             addMessage(query, true);
-            const sendBtn = document.getElementById('sendBtn');
-            sendBtn.disabled = true;
             showTyping();
             
             try {
@@ -496,26 +452,149 @@
                 const data = await response.json();
                 addMessage(data.summary || 'Found products matching your search');
                 
-                // Show product details
                 if (data.results && data.results.length > 0) {
-                    data.results.forEach(product => {
-                        const productInfo = `**${product.name}** - ${product.price}\\n${product.description}\\n✅ ${product.availability ? 'Available' : 'Out of Stock'}`;
-                        addMessage(productInfo);
-                    });
+                    addProductCards(data.results);
                 }
                 
             } catch (error) {
                 hideTyping();
                 showError(`Product search failed: ${error.message}`);
-            } finally {
-                sendBtn.disabled = false;
             }
         }
 
-        function testErrorHandling() {
-            const tests = ['Calculate', 'Find outlets', 'Show products', 'Invalid input test'];
-            const randomTest = tests[Math.floor(Math.random() * tests.length)];
-            sendExampleMessage(randomTest);
+        // Direct restaurant search
+        async function sendRestaurantSearch(query) {
+            addMessage(query, true);
+            showTyping();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/restaurants/search?cuisine=Italian&location=KL`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+                
+                hideTyping();
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                addMessage(`Found ${data.total_count} restaurants matching your search`);
+                
+            } catch (error) {
+                hideTyping();
+                showError(`Restaurant search failed: ${error.message}`);
+            }
+        }
+
+        // Agentic chat with planning
+        async function sendAgenticMessage(message) {
+            addMessage(message, true);
+            showTyping();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/agentic-chat/message`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        user_id: 'demo-user-' + Date.now(),
+                        conversation_id: sessionStorage.getItem('agentic_conversation_id') || null
+                    })
+                });
+                
+                hideTyping();
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                // Store conversation ID
+                if (data.conversation_id) {
+                    sessionStorage.setItem('agentic_conversation_id', data.conversation_id);
+                }
+                
+                addMessage(data.response || 'No response received');
+                
+                // Show planning details
+                if (data.planning_details) {
+                    console.log('🧠 Planning Details:', data.planning_details);
+                    addMessage(`🧠 **Planning Details**: ${JSON.stringify(data.planning_details.decision_reasoning || 'Decision made')}`);
+                }
+                
+            } catch (error) {
+                hideTyping();
+                showError(`Agentic chat failed: ${error.message}`);
+            }
+        }
+
+        // Direct message to basic chat
+        async function sendDirectMessage(message) {
+            addMessage(message, true);
+            showTyping();
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/chat/message`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        user_id: 'demo-user-' + Date.now(),
+                        conversation_id: sessionStorage.getItem('conversation_id') || null
+                    })
+                });
+                
+                hideTyping();
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                // Store conversation ID
+                if (data.conversation_id) {
+                    sessionStorage.setItem('conversation_id', data.conversation_id);
+                }
+                
+                addMessage(data.response || 'No response received');
+                
+            } catch (error) {
+                hideTyping();
+                showError(`Chat failed: ${error.message}`);
+            }
+        }
+
+        // Default message handler
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            input.value = '';
+            
+            // Smart routing based on message content
+            if (message.includes('calculate') || message.includes('math') || /\d+\s*[+\-*/]\s*\d+/.test(message)) {
+                await sendDirectMessage(message);
+            } else if (message.includes('product') || message.includes('tumbler') || message.includes('cup') || message.includes('mug')) {
+                await sendProductSearch(message);
+            } else if (message.includes('restaurant') || message.includes('food') || message.includes('cuisine')) {
+                await sendRestaurantSearch(message);
+            } else if (message.includes('plan') || message.includes('agentic') || message.includes('reasoning')) {
+                await sendAgenticMessage(message);
+            } else {
+                await sendDirectMessage(message);
+            }
         }
 
         function handleKeyPress(event) {
@@ -536,7 +615,7 @@
                         const messagesContainer = document.getElementById('chatMessages');
                         const successDiv = document.createElement('div');
                         successDiv.className = 'success-message';
-                        successDiv.innerHTML = `<strong>✅ Backend Connected:</strong> ${data.message}`;
+                        successDiv.innerHTML = `<strong>✅ Enhanced Backend Connected:</strong> ${data.message}`;
                         messagesContainer.appendChild(successDiv);
                     }
                 }

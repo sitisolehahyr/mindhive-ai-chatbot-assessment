@@ -1,5 +1,6 @@
 import re
 import uuid
+import logging
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime
 from app.models.conversation import (
@@ -7,12 +8,24 @@ from app.models.conversation import (
     ConversationState, OutletInfo
 )
 from app.core.memory_manager import MemoryManager
+from app.config import INTENT_CONFIDENCE_THRESHOLD, HIGH_CONFIDENCE_THRESHOLD
+
+logger = logging.getLogger(__name__)
 
 
 class ChatbotService:
+    """
+    Intent-based chatbot service for handling customer inquiries.
+    
+    This service uses a rule-based intent classification system to understand
+    user queries and provide appropriate responses. It maintains conversation
+    state and context through a memory manager.
+    """
+    
     def __init__(self, memory_manager: MemoryManager):
         self.memory_manager = memory_manager
         self.outlets_db = self._initialize_outlets_db()
+        logger.info("ChatbotService initialized with intent-based classification")
     
     def _initialize_outlets_db(self) -> Dict[str, OutletInfo]:
         return {
